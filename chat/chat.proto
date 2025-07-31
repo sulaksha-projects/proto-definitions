@@ -6,8 +6,24 @@ option go_package = "github.com/sulaksha-aththanayaka/sulaksha-projects/proto-de
 
 service ChatService {
   rpc SayHello (Message) returns (Message);
+  rpc GetVariant (VariantId) returns (ProductVariant);
 }
 
 message Message {
   string body = 1;
+}
+
+message ProductVariant {
+  string id = 1;
+  string productId = 2;
+  string color = 3;
+  string size = 4;
+	double price = 5;     
+	int32 stock = 6;
+	string sku = 7;
+	string imageURL = 8; 
+}
+
+message VariantId {
+  string id = 1;
 }

@@ -65,6 +65,150 @@ func (x *Message) GetBody() string {
 	return ""
 }
 
+type ProductVariant struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ProductId     string                 `protobuf:"bytes,2,opt,name=productId,proto3" json:"productId,omitempty"`
+	Color         string                 `protobuf:"bytes,3,opt,name=color,proto3" json:"color,omitempty"`
+	Size          string                 `protobuf:"bytes,4,opt,name=size,proto3" json:"size,omitempty"`
+	Price         float64                `protobuf:"fixed64,5,opt,name=price,proto3" json:"price,omitempty"`
+	Stock         int32                  `protobuf:"varint,6,opt,name=stock,proto3" json:"stock,omitempty"`
+	Sku           string                 `protobuf:"bytes,7,opt,name=sku,proto3" json:"sku,omitempty"`
+	ImageURL      string                 `protobuf:"bytes,8,opt,name=imageURL,proto3" json:"imageURL,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProductVariant) Reset() {
+	*x = ProductVariant{}
+	mi := &file_chat_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProductVariant) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProductVariant) ProtoMessage() {}
+
+func (x *ProductVariant) ProtoReflect() protoreflect.Message {
+	mi := &file_chat_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProductVariant.ProtoReflect.Descriptor instead.
+func (*ProductVariant) Descriptor() ([]byte, []int) {
+	return file_chat_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ProductVariant) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ProductVariant) GetProductId() string {
+	if x != nil {
+		return x.ProductId
+	}
+	return ""
+}
+
+func (x *ProductVariant) GetColor() string {
+	if x != nil {
+		return x.Color
+	}
+	return ""
+}
+
+func (x *ProductVariant) GetSize() string {
+	if x != nil {
+		return x.Size
+	}
+	return ""
+}
+
+func (x *ProductVariant) GetPrice() float64 {
+	if x != nil {
+		return x.Price
+	}
+	return 0
+}
+
+func (x *ProductVariant) GetStock() int32 {
+	if x != nil {
+		return x.Stock
+	}
+	return 0
+}
+
+func (x *ProductVariant) GetSku() string {
+	if x != nil {
+		return x.Sku
+	}
+	return ""
+}
+
+func (x *ProductVariant) GetImageURL() string {
+	if x != nil {
+		return x.ImageURL
+	}
+	return ""
+}
+
+type VariantId struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VariantId) Reset() {
+	*x = VariantId{}
+	mi := &file_chat_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VariantId) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VariantId) ProtoMessage() {}
+
+func (x *VariantId) ProtoReflect() protoreflect.Message {
+	mi := &file_chat_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VariantId.ProtoReflect.Descriptor instead.
+func (*VariantId) Descriptor() ([]byte, []int) {
+	return file_chat_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *VariantId) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
 var File_chat_proto protoreflect.FileDescriptor
 
 const file_chat_proto_rawDesc = "" +
@@ -72,9 +216,22 @@ const file_chat_proto_rawDesc = "" +
 	"\n" +
 	"chat.proto\x12\x04chat\"\x1d\n" +
 	"\aMessage\x12\x12\n" +
-	"\x04body\x18\x01 \x01(\tR\x04body27\n" +
+	"\x04body\x18\x01 \x01(\tR\x04body\"\xc2\x01\n" +
+	"\x0eProductVariant\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1c\n" +
+	"\tproductId\x18\x02 \x01(\tR\tproductId\x12\x14\n" +
+	"\x05color\x18\x03 \x01(\tR\x05color\x12\x12\n" +
+	"\x04size\x18\x04 \x01(\tR\x04size\x12\x14\n" +
+	"\x05price\x18\x05 \x01(\x01R\x05price\x12\x14\n" +
+	"\x05stock\x18\x06 \x01(\x05R\x05stock\x12\x10\n" +
+	"\x03sku\x18\a \x01(\tR\x03sku\x12\x1a\n" +
+	"\bimageURL\x18\b \x01(\tR\bimageURL\"\x1b\n" +
+	"\tVariantId\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id2l\n" +
 	"\vChatService\x12(\n" +
-	"\bSayHello\x12\r.chat.Message\x1a\r.chat.MessageBPZNgithub.com/sulaksha-aththanayaka/sulaksha-projects/proto-definitions/chat;chatb\x06proto3"
+	"\bSayHello\x12\r.chat.Message\x1a\r.chat.Message\x123\n" +
+	"\n" +
+	"GetVariant\x12\x0f.chat.VariantId\x1a\x14.chat.ProductVariantBPZNgithub.com/sulaksha-aththanayaka/sulaksha-projects/proto-definitions/chat;chatb\x06proto3"
 
 var (
 	file_chat_proto_rawDescOnce sync.Once
@@ -88,15 +245,19 @@ func file_chat_proto_rawDescGZIP() []byte {
 	return file_chat_proto_rawDescData
 }
 
-var file_chat_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_chat_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_chat_proto_goTypes = []any{
-	(*Message)(nil), // 0: chat.Message
+	(*Message)(nil),        // 0: chat.Message
+	(*ProductVariant)(nil), // 1: chat.ProductVariant
+	(*VariantId)(nil),      // 2: chat.VariantId
 }
 var file_chat_proto_depIdxs = []int32{
 	0, // 0: chat.ChatService.SayHello:input_type -> chat.Message
-	0, // 1: chat.ChatService.SayHello:output_type -> chat.Message
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	2, // 1: chat.ChatService.GetVariant:input_type -> chat.VariantId
+	0, // 2: chat.ChatService.SayHello:output_type -> chat.Message
+	1, // 3: chat.ChatService.GetVariant:output_type -> chat.ProductVariant
+	2, // [2:4] is the sub-list for method output_type
+	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -113,7 +274,7 @@ func file_chat_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_chat_proto_rawDesc), len(file_chat_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
